@@ -1,0 +1,21 @@
+[package]
+name = "rust_by_example"
+version = "0.1.0"
+authors = ["Ahn, Seung-rye <seungrye@gmail.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+
+[[bin]]
+name = "formatted_print"
+path = "src/formatted_print.rs"
+
+[[bin]]
+name = "print_debug"
+path = "src/print_debug.rs"
+
+[[bin]]
+name = "print_display"
+path = "src/print_display.rs"
