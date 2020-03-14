@@ -29,4 +29,6 @@ fn main() {
     functions::methods::main();
     functions::closures::main();
     functions::higher_order_functions::main();
+
+    println!("Hello, world!");
 }

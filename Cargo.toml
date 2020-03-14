@@ -1,7 +1,7 @@
 [package]
-name = "rust-by-example"
+name = "rust_by_example"
 version = "0.1.0"
-authors = ["Enji <seungrye@gmail.com>"]
+authors = ["Ahn, Seung-rye <seungrye@gmail.com>"]
 edition = "2018"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
@@ -10,3 +10,15 @@ edition = "2018"
 
 rand="0.3.0"
 function_name = "0.2.0"
+
+[[bin]]
+name = "formatted_print"
+path = "src/formatted_print.rs"
+
+[[bin]]
+name = "print_debug"
+path = "src/print_debug.rs"
+
+[[bin]]
+name = "print_display"
+path = "src/print_display.rs"
