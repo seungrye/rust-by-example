@@ -22,3 +22,7 @@ path = "src/print_debug.rs"
 [[bin]]
 name = "print_display"
 path = "src/print_display.rs"
+
+[[bin]]
+name = "testcase_list"
+path = "src/testcase_list.rs"
