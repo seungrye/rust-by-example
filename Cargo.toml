@@ -12,6 +12,10 @@ rand="0.3.0"
 function_name = "0.2.0"
 
 [[bin]]
+name = "fmt"
+path = "src/fmt.rs"
+
+[[bin]]
 name = "formatted_print"
 path = "src/formatted_print.rs"
 
