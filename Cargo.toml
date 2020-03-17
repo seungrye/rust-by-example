@@ -9,6 +9,10 @@ edition = "2018"
 [dependencies]
 
 [[bin]]
+name = "fmt"
+path = "src/fmt.rs"
+
+[[bin]]
 name = "formatted_print"
 path = "src/formatted_print.rs"
 
