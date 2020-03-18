@@ -9,6 +9,10 @@ edition = "2018"
 [dependencies]
 
 [[bin]]
+name = "tuples"
+path = "src/tuples.rs"
+
+[[bin]]
 name = "fmt"
 path = "src/fmt.rs"
 
