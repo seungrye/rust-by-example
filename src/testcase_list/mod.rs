@@ -1,5 +1,5 @@
 use std::fmt;
-fn main() {
+pub fn main() {
     let v = List(vec![1, 2, 3]);
 
     println!("{}", v);

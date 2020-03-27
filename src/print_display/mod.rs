@@ -1,5 +1,5 @@
 use std::fmt;
-fn main() {
+pub fn main() {
     let minmax = MinMax(0, 14);
     println!("Compare structures:");
     println!("Display: {}", minmax);
