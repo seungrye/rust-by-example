@@ -1,4 +1,4 @@
-fn main() {
+pub fn main() {
     println!("{:?} months in a year.", 12);
     println!(
         "{1:?} {0:?} is the {actor:?} name.",

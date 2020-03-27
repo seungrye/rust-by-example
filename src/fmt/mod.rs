@@ -22,7 +22,7 @@ impl Display for City {
         );
     }
 }
-fn main() {
+pub fn main() {
     for city in [
         City {
             name: "Doublin",
