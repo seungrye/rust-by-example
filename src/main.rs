@@ -1,4 +1,5 @@
 mod array;
+mod cast;
 mod constants;
 mod enums;
 mod fmt;
@@ -21,4 +22,5 @@ fn main() {
     enums::main();
     constants::main();
     variable_bindings::main();
+    cast::main();
 }
