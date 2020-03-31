@@ -2,6 +2,7 @@ mod array;
 mod cast;
 mod constants;
 mod enums;
+mod flow_control;
 mod fmt;
 mod formatted_print;
 mod print_debug;
@@ -23,4 +24,5 @@ fn main() {
     constants::main();
     variable_bindings::main();
     cast::main();
+    flow_control::main();
 }
