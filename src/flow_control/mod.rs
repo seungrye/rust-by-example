@@ -7,6 +7,33 @@ pub fn main() {
     while_();
     for_and_range();
     match_();
+    match_guard();
+    match_binding();
+}
+fn match_binding() {
+    println!("Tell me type of person you are");
+    match 15 {
+        0 => println!("I am not born yet I guess"),
+        // match 를 1 ... 12 까지 직접적으로 할 수 있지만, 그러면 정확히 나이를 알 수 없으므로,
+        // n 에 1 ... 12 를 바인드 한다. 이제 나이를 알수 있게 되었다.
+        n @ 1..=12 => println!("I am a child of age {:?}", n),
+        n @ 13..=19 => println!("I am a teen of age {:?}", n),
+        n => println!("I am an old person of age {:?}", n),
+    }
+}
+fn match_guard() {
+    let pair = (2, -2);
+    println!("Tell me about {:?}", pair);
+
+    match pair {
+        (x, y) if x + y == 0 => println!("Antimatter, 뻥~!"),
+        //               ^ 요 'if 조건문' 이 guard 부분이다.
+        (x, y) if x == y => {
+            println!("These are twins");
+        }
+        (x, _) if x % 2 == 1 => println!("The first one is odd"),
+        _ => println!("No correlation..."),
+    }
 }
 fn match_() {
     let number = 13;
@@ -15,7 +42,7 @@ fn match_() {
     match number {
         1 => println!("One!"),
         2 | 3 | 5 | 7 | 11 => println!("This is a prime"),
-        13...19 => println!("A teen"),
+        13..=19 => println!("A teen"),
         _ => println!("Ain't special"),
     }
 
