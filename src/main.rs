@@ -1,6 +1,7 @@
 mod array;
 mod cast;
 mod constants;
+mod destructuring;
 mod enums;
 mod flow_control;
 mod fmt;
@@ -24,5 +25,6 @@ fn main() {
     constants::main();
     variable_bindings::main();
     cast::main();
+    destructuring::main();
     flow_control::main();
 }
