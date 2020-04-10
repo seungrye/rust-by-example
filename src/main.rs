@@ -6,6 +6,7 @@ mod enums;
 mod flow_control;
 mod fmt;
 mod formatted_print;
+mod functions;
 mod print_debug;
 mod print_display;
 mod structs;
@@ -27,4 +28,5 @@ fn main() {
     cast::main();
     destructuring::main();
     flow_control::main();
+    functions::main();
 }
