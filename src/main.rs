@@ -1,6 +1,8 @@
 mod types;
-use types::casting;
 
 fn main() {
-    casting::main();
+    types::casting::main();
+    types::literals::main();
+    types::inference::main();
+types::aliasing::main();
 }
