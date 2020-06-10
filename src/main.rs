@@ -1,5 +1,6 @@
 mod types;
 mod conversion;
+mod expressions;
 
 fn main() {
     types::casting::main();
@@ -10,4 +11,6 @@ fn main() {
     conversion::from_and_into::main();
     conversion::tryfrom_and_tryinto::main();
     conversion::to_and_from_strings::main();
+
+    expressions::main();
 }
