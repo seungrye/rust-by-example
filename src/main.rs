@@ -19,4 +19,6 @@ fn main() {
     flow_of_control::loop_::main();
     flow_of_control::loop_::nesting_and_labels::main();
     flow_of_control::loop_::returning_from_loops::main();
+    flow_of_control::while_::main();
+    flow_of_control::for_and_range::main();
 }
