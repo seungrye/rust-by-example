@@ -21,4 +21,5 @@ fn main() {
     flow_of_control::loop_::returning_from_loops::main();
     flow_of_control::while_::main();
     flow_of_control::for_and_range::main();
+    flow_of_control::match_::main();
 }
