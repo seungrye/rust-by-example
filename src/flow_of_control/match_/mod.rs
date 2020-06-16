@@ -1,4 +1,4 @@
-use rand::Rng;
+use rand::Rng; // should add 'rand' as dependencies to 'Cargo.toml'
 
 fn how_to_match_use() {
     let mut rng = rand::thread_rng();
