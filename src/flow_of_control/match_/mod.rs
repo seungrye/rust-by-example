@@ -1,5 +1,7 @@
 use rand::Rng; // should add 'rand' as dependencies to 'Cargo.toml'
 
+mod destructuring;
+
 fn how_to_match_use() {
     let mut rng = rand::thread_rng();
     let number = rng.gen_range(0, 20);
@@ -22,6 +24,9 @@ fn how_to_match_use() {
     println!("{} => {}", boolean, binary);
 }
 
+
+
 pub fn main() {
     how_to_match_use();
+    destructuring::main();
 }
