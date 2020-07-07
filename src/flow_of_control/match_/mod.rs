@@ -2,6 +2,7 @@ use rand::Rng; // should add 'rand' as dependencies to 'Cargo.toml'
 
 mod destructuring;
 mod guards;
+mod binding;
 
 fn how_to_match_use() {
     let mut rng = rand::thread_rng();
@@ -31,4 +32,5 @@ pub fn main() {
     how_to_match_use();
     destructuring::main();
     guards::main();
+    binding::main();
 }

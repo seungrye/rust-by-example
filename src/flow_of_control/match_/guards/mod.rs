@@ -9,7 +9,7 @@ pub fn main() {
     //       pair 가 (0, 0) 인 경우, 두가지 condition 을 모두 만족하지만, 'These are twins' 만 출력함.
     match pair {
         (x, y) if x == y => println!("These are twins"),  // `if confition` part is a guard
-        (x, y) if x + y == 0 => println!("Animatter, boooooooooooooooom!!"),
+        (x, y) if x + y == 0 => println!("Antimatter, boooooooooooooooom!!"),
         (x, _) if x % 2 == 1 => println!("The first one is odd"),
         _ => println!("No Correlation..."),
     }

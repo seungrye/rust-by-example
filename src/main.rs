@@ -22,4 +22,5 @@ fn main() {
     flow_of_control::while_::main();
     flow_of_control::for_and_range::main();
     flow_of_control::match_::main();
+    flow_of_control::if_let::main();
 }
