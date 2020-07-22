@@ -2,6 +2,7 @@ mod types;
 mod conversion;
 mod expressions;
 mod flow_of_control;
+mod functions;
 
 fn main() {
     types::casting::main();
@@ -24,4 +25,7 @@ fn main() {
     flow_of_control::match_::main();
     flow_of_control::if_let::main();
     flow_of_control::while_let::main();
+
+    functions::methods::main();
+    functions::closures::main();
 }
