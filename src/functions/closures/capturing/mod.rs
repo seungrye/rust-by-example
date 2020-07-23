@@ -50,5 +50,14 @@ fn closure_usage() {
 }
 
 fn closure_take_ownership() {
-    println!("WIP");
+    let haystack = vec![1, 2, 3];
+
+    // using `move` before vertical pipes forces closure to take ownership of captured variables
+    let contains = move|needle| haystack.contains(needle);
+
+    println!("{}", contains(&1));
+    println!("{}", contains(&4));
+
+    // following code will be errored, because borrow checker doesn't allow re-using variable after it has been moved.
+    // println!("There are {} element in vec", haystack.len());
 }
