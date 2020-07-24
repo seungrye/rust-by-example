@@ -1,4 +1,5 @@
 mod capturing;
+mod as_input_parameters;
 
 pub fn main() {
     fn function (i:i32) -> i32 { i + 1 }
@@ -17,4 +18,5 @@ pub fn main() {
 
     //--------------------------------------------------------------------------
     capturing::main();
+    as_input_parameters::main();
 }
