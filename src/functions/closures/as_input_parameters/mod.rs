@@ -25,9 +25,17 @@ pub fn main() {
 
         apply(diary);
 
-        println!("WIP");
+        let double = |x| 2*x;
+        println!("3 doubled: {}", apply_to_3(double));
 }
 
 fn apply<F>(f:F) where F: FnOnce() { // Fn, FnMut, FnOnce 로 변경해 가면서 테스트 필요.
     f();
+}
+
+// A function which takes a closure and returns an 'i32'.
+fn apply_to_3<F>(f:F) -> i32
+// and The closure takes an 'i32' and returns an 'i32'
+where F:Fn(i32) -> i32 {
+    return f(3);
 }

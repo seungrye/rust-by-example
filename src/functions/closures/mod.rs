@@ -1,5 +1,7 @@
 mod capturing;
 mod as_input_parameters;
+mod type_anonymity;
+mod input_functions;
 
 pub fn main() {
     fn function (i:i32) -> i32 { i + 1 }
@@ -19,4 +21,6 @@ pub fn main() {
     //--------------------------------------------------------------------------
     capturing::main();
     as_input_parameters::main();
+    type_anonymity::main();
+    input_functions::main();
 }
