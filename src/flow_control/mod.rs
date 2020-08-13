@@ -154,6 +154,7 @@ fn while_() {
         n += 1;
     }
 }
+#[allow(unused_labels)]
 fn nesting_and_labels() {
     'outer: loop {
         println!("Entered the outer loop");
