@@ -62,6 +62,7 @@ fn destructure_pointers() {
     }
 }
 
+#[allow(dead_code)]
 enum Color {
     Red,
     Green,

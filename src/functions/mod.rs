@@ -8,11 +8,17 @@ pub fn main() {
 // Fn : 클로저의 캡처 변수를 참조로 획득 (&T)
 // FnMut : 클로저의 캡처 변수를 가변 참조로 획득(&mut T)
 // FnOnce : 클로저의 캡처 변수를 값을 획득(T)
-fn apply<F>(f: F) where F: FnOnce() {
+fn apply<F>(f: F)
+where
+    F: FnOnce(),
+{
     f();
 }
 // i32 를 반환하는 클로저를 파라메터로 받는 함수이며, 이 함수는 i32 를 반환한다.
-fn apply_to_3<F>(f: F) -> i32 where F:Fn(i32) -> i32 {
+fn apply_to_3<F>(f: F) -> i32
+where
+    F: Fn(i32) -> i32,
+{
     return f(3);
 }
 fn closure_as_input_parameters() {
@@ -36,7 +42,9 @@ fn closure_as_input_parameters() {
 
     apply(diary);
 
-    let double = |x| { return 2 * x; };
+    let double = |x| {
+        return 2 * x;
+    };
     println!("3 doubled : {}", apply_to_3(double));
 }
 
@@ -53,17 +61,23 @@ fn capturing() {
 
     // `count` 를 증가시키는 클로저는 `&mut count` 또는 `count` 중 하나를 취할수 있지만,
     // `&mut count` 이 덜 제한적이므로, 이를 취합니다.
-    let mut inc = || { count +=1; println!("`count`: {}", count);};
+    let mut inc = || {
+        count += 1;
+        println!("`count`: {}", count);
+    };
     inc();
     inc();
 
-    let reborrow = &mut count;
+    let _reborrow = &mut count;
 
     let movable = Box::new(3);
     // `mem::drop` 는 `T` 를 요구하므로, 이는 값을 취합니다.
     // 복사 타입은 클로저로 복사되어 원본은 변경되지 않습니다.
     // 복사가 아니라면, 이동되어야 합니다. 따라서, `movable` 이 클로저로 이동됩니다.
-    let consume = || { println!("`movable`: {:?}", movable); std::mem::drop(movable);};
+    let consume = || {
+        println!("`movable`: {:?}", movable);
+        std::mem::drop(movable);
+    };
     consume();
 }
 fn closures() {
