@@ -3,6 +3,7 @@ mod as_input_parameters;
 mod type_anonymity;
 mod input_functions;
 mod as_output_parameters;
+mod examples_in_std;
 
 pub fn main() {
     fn function (i:i32) -> i32 { i + 1 }
@@ -25,4 +26,5 @@ pub fn main() {
     type_anonymity::main();
     input_functions::main();
     as_output_parameters::main();
+    examples_in_std::main();
 }
