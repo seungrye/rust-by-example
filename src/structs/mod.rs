@@ -42,6 +42,7 @@ struct Rectangle {
 }
 
 impl Rectangle {
+    #[allow(clippy::needless_return)]
     pub fn rect_area(&self) -> f32 {
         let Rectangle {
             p1: Point { x: x1, y: y1 },
@@ -52,6 +53,7 @@ impl Rectangle {
     }
 }
 
+#[allow(clippy::needless_return)]
 fn square(point: &Point, v: f32) -> Rectangle {
     return Rectangle {
         p1: Point {

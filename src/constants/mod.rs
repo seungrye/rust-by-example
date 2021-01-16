@@ -1,6 +1,9 @@
+// Note. Statics have by default a `static lifetime
+#[allow(clippy::clippy::redundant_static_lifetimes)]
 static LANGUAGE: &'static str = "Rust"; // `'static` lifetime 을 갖도록 명시함.
 const THRESHOLD: i32 = 10;
 
+#[allow(clippy::clippy::needless_return)]
 fn is_big(n: i32) -> bool {
     return n > THRESHOLD;
 }

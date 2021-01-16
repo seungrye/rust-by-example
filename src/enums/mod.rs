@@ -56,11 +56,11 @@ enum Person {
 }
 
 fn enum_use_example() {
-    // use Status::{Poor, Rich};
-    // use Work::*;
+    use Status::{Poor, Rich};
+    use Work::*;
 
-    let status = Status::Poor;
-    let work = Work::Civilian;
+    let status = Poor;
+    let work = Civilian;
 
     match status {
         Rich => println!("The rich have lots of money!"),

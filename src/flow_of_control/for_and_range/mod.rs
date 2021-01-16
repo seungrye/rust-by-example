@@ -12,7 +12,7 @@ fn for_and_range() {
             print!("{} ", n);
         }
     }
-    println!("");
+    println!();
 }
 
 
@@ -22,6 +22,7 @@ fn for_and_iterators_using_iter() {
     // iter : This borrows each element of the collection through each iteration.
     //        Thus leaving the collection untouched and available for reuse after the loop.
     for name in names.iter() {
+        #[allow(clippy::match_ref_pats)]
         match name {
             &"Ferris" => println!("There is a rustacean among us!"),
             _ => println!("Hello {}", name)
@@ -50,6 +51,7 @@ fn for_and_iterators_using_iter_mut() {
     // iter_mut - This mutably borrows each element of the collection,
     //            allowing for the collection to be modified in place.
     for name in names.iter_mut() {
+        #[allow(clippy::match_ref_pats)]
         match name {
             &mut "Ferris" => println!("There is a rustacean among us!"),
             _ => println!("Hello {}", name)

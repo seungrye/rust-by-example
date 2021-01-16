@@ -27,6 +27,8 @@ pub fn main() {
 
     println!("Transpose:\n{}", transpose(matrix));
 }
+
+#[allow(clippy::needless_return)]
 fn reverse(pair: (i32, bool)) -> (bool, i32) {
     let (int_, bool_) = pair;
 
@@ -46,6 +48,7 @@ impl Display for Matrix {
     }
 }
 
+#[allow(clippy::needless_return)]
 fn transpose(matrix: Matrix) -> Matrix {
     let trans = Matrix(matrix.0, matrix.2, matrix.1, matrix.3);
     return trans;

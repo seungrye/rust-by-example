@@ -1,6 +1,6 @@
-pub mod methods;
 pub mod closures;
 pub mod higher_order_functions;
+pub mod methods;
 
 pub fn main() {
     methods();
@@ -19,6 +19,7 @@ where
     f();
 }
 // i32 를 반환하는 클로저를 파라메터로 받는 함수이며, 이 함수는 i32 를 반환한다.
+#[allow(clippy::needless_return)]
 fn apply_to_3<F>(f: F) -> i32
 where
     F: Fn(i32) -> i32,
@@ -46,6 +47,7 @@ fn closure_as_input_parameters() {
 
     apply(diary);
 
+    #[allow(clippy::needless_return)]
     let double = |x| {
         return 2 * x;
     };
@@ -127,6 +129,7 @@ struct Rectangle {
     p2: Point,
 }
 impl Rectangle {
+    #[allow(clippy::needless_return)]
     fn area(&self) -> f64 {
         let Point { x: x1, y: y1 } = self.p1;
         let Point { x: x2, y: y2 } = self.p2;
@@ -134,6 +137,7 @@ impl Rectangle {
         return ((x1 - x2) * (y1 - y2)).abs();
     }
 
+    #[allow(clippy::needless_return)]
     fn perimeter(&self) -> f64 {
         let Point { x: x1, y: y1 } = self.p1;
         let Point { x: x2, y: y2 } = self.p2;
@@ -162,10 +166,12 @@ struct Point {
     y: f64,
 }
 impl Point {
+    #[allow(clippy::needless_return)]
     fn origin() -> Point {
         return Point { x: 0., y: 0. };
     }
 
+    #[allow(clippy::needless_return)]
     fn new(x: f64, y: f64) -> Point {
         return Point { x: x, y: y };
     }

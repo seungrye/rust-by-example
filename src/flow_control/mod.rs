@@ -14,6 +14,8 @@ pub fn main() {
 }
 fn waste_strokes2() {
     let mut optional = Some(0);
+
+    #[allow(clippy::while_let_loop)]
     loop {
         match optional {
             Some(i) => {
@@ -46,6 +48,8 @@ fn while_let() {
 }
 fn waste_strokes() {
     let optional = Some(7);
+
+    #[allow(clippy::single_match)]
     match optional {
         Some(i) => println!("This is a really long string and `{:?}", i),
         _ => {} // None 에 대해 처리해야 되기 때문에 필요함. 공간낭비로 보임.
@@ -196,6 +200,7 @@ fn loop_() {
 fn if_else() {
     let n = 5;
 
+    #[allow(clippy::comparison_chain)]
     if n < 0 {
         println!("{} is negative", n);
     } else if n > 0 {

@@ -49,7 +49,7 @@ fn pointers_n_ref() {
     match reference {
         // 만약 reference 변수를 '&val' 에 패턴매칭을 하면, &i32 과 &val 로 비교될 수 있다.
         // 이 경우, 매칭되는 '&' 는 빠지고, i32 가 val 에 할당된다.
-        &val => println!("Got a value via destructuring: {:?}", val),
+        ref val => println!("Got a value via destructuring: {:?}", val),
     }
 
     // To avoid the '&', you dereference before matching

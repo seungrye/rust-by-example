@@ -19,6 +19,7 @@ fn fizzbuzz(n: u32) -> () {  // Functions that 'dont' return a value, actually r
     }
 }
 
+#[allow(clippy::needless_return)]
 fn is_divisible_by(lhs: u32, rhs: u32) -> bool {
     if rhs == 0 {
         return false;

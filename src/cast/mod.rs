@@ -39,18 +39,27 @@ fn inference() {
 }
 fn literals() {
     // 접미사가 붙은 리터럴, 이들의 타입은 초기화 될때 알려줄 수 있다.
-    let x = 1u8;
-    let y = 2u32;
-    let z = 3f32;
+    {
+        let x = 1u8;
+        println!("size of 'x' in bytes: {}", std::mem::size_of_val(&x));
+    }
+    {
+        let y = 2u32;
+        println!("size of 'y' in bytes: {}", std::mem::size_of_val(&y));
+    }
+    {
+        let z = 3f32;
+        println!("size of 'z' in bytes: {}", std::mem::size_of_val(&z));
+    }
     // 접미사가 없는 리터럴, 이들의 타입은 그들의 사용처에 달렸다.
-    let i = 1;
-    let f = 1.0;
-
-    println!("size of 'x' in bytes: {}", std::mem::size_of_val(&x));
-    println!("size of 'y' in bytes: {}", std::mem::size_of_val(&y));
-    println!("size of 'z' in bytes: {}", std::mem::size_of_val(&z));
-    println!("size of 'i' in bytes: {}", std::mem::size_of_val(&i));
-    println!("size of 'f' in bytes: {}", std::mem::size_of_val(&f));
+    {
+        let i = 1;
+        println!("size of 'i' in bytes: {}", std::mem::size_of_val(&i));
+    }
+    {
+        let f = 1.0;
+        println!("size of 'f' in bytes: {}", std::mem::size_of_val(&f));
+    }
 }
 fn casting() {
     let decimal = 65.4321_f32;

@@ -10,18 +10,18 @@ fn destructure_structures() {
         y: u32,
     };
 
-    let foo = Foo { x: (1, 2), y: 3 };
-    let Foo { x: (a, b), y } = foo;
+    let foo_ = Foo { x: (1, 2), y: 3 };
+    let Foo { x: (a, b), y } = foo_;
 
     println!("a = {}, b = {}, y = {}", a, b, y);
 
     // 구조체를 destructuring 하거나 변수의 이름을 변경할 수 있습니다.
     // 순서는 중요하지 않습니다.
-    let Foo { y: i, x: j } = foo;
+    let Foo { y: i, x: j } = foo_;
     println!("i = {:?}, j = {:?}", i, j);
 
     // 변수를 무시하는것도 가능합니다.
-    let Foo { y, .. } = foo;
+    let Foo { y, .. } = foo_;
     println!("y = {}", y);
 
     // 필드에 대한 취급이 빠져있다면, 에러가 발생합니다.
@@ -29,13 +29,16 @@ fn destructure_structures() {
 }
 fn destructure_pointers() {
     let reference = &4;
+
+    #[allow(clippy::match_single_binding)]
     match reference {
         // 'reference' 를 '&val' 에 패턴매칭 시키면, 이는 &i32 와 비교하는것과 같습니다.
         // 매치되면 & 가 드랍되어 i32 가 val 로 할당되게 됩니다.
-        &val => println!("Got a value via destructuring: {:?}", val),
+        ref val => println!("Got a value via destructuring: {:?}", val),
     }
 
     // & 를 생략하고 싶다면, 매칭시키기 전에 역참조를 하도록 합니다.
+    #[allow(clippy::match_single_binding)]
     match *reference {
         val => println!("Got a value via dereferencing: {:?}", val),
     }
@@ -44,15 +47,18 @@ fn destructure_pointers() {
     let _not_a_reference = 3;
 
     // 'ref' 는 참조임을 명시하고자 하는 의도입니다. 이 참조는 할당됩니다.
+    #[allow(clippy::toplevel_ref_arg)]
     let ref _is_a_reference = 3;
 
     let value = 5;
     let mut mut_value = 6;
 
+    #[allow(clippy::match_single_binding)]
     match value {
         ref r => println!("Got a reference to a value: {:?}", r),
     }
 
+    #[allow(clippy::match_single_binding)]
     match mut_value {
         ref mut m => {
             // 참조를 얻고, 이를 역참조하여 값을 추가합니다.

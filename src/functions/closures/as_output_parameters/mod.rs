@@ -9,6 +9,7 @@ pub fn main() {
     fn_once();
 }
 
+#[allow(clippy::needless_return)]
 fn create_fn() -> impl Fn() {
     let text = "Fn".to_owned();
 
@@ -17,12 +18,14 @@ fn create_fn() -> impl Fn() {
     return move||println!("This is a {}", text);
 }
 
+#[allow(clippy::needless_return)]
 fn create_fnmut() -> impl FnMut() {
     let text = "FnMut".to_owned();
 
     return move||println!("This is a {}", text);
 }
 
+#[allow(clippy::needless_return)]
 fn create_fnonce() -> impl FnOnce() {
     let text = "FnOnce".to_owned();
 
