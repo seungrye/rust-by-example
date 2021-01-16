@@ -1,3 +1,4 @@
+#[allow(clippy::print_literal)]
 pub fn main() {
     println!("{} days", 31);
 
