@@ -3,7 +3,7 @@
 pub fn main() {
     if_else();
     loop_();
-    nesting_and_labels();
+    // nesting_and_labels();
     while_();
     for_and_range();
     match_();
@@ -154,22 +154,24 @@ fn while_() {
         n += 1;
     }
 }
-#[allow(unused_labels)]
-fn nesting_and_labels() {
-    'outer: loop {
-        println!("Entered the outer loop");
-        'inner: loop {
-            println!("Entered the inner loop");
 
-            // 이 break 는 외부 루프를 종결한다.
-            break 'outer;
-        }
+// #[allow(unused_labels)]
+// fn nesting_and_labels() {
+//     'outer: loop {
+//         println!("Entered the outer loop");
+//         'inner: loop {
+//             println!("Entered the inner loop");
 
-        println!("This point will never be reached");
-    }
+//             // 이 break 는 외부 루프를 종결한다.
+//             break 'outer;
+//         }
 
-    println!("Exited the outer loop");
-}
+//         println!("This point will never be reached");
+//     }
+
+//     println!("Exited the outer loop");
+// }
+
 fn loop_() {
     let mut count = 0;
     println!("Let's count until infinity!");

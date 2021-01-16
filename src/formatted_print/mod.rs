@@ -25,6 +25,6 @@ pub fn main() {
         Structure(3)
     );
 
-    let pi = 3.141592;
+    let pi:f64 = std::f64::consts::PI;
     println!("Pi is roughly {pi:.3}", pi = pi);
 }

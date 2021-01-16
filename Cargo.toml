@@ -8,29 +8,29 @@ edition = "2018"
 
 [dependencies]
 
-rand="0.3.0"
+rand = "0.3.0"
 function_name = "0.2.0"
 
-[[bin]]
-name = "tuples"
-path = "src/tuples.rs"
+# [[bin]]
+# name = "tuples"
+# path = "src/tuples.rs"
 
-[[bin]]
-name = "fmt"
-path = "src/fmt.rs"
+# [[bin]]
+# name = "fmt"
+# path = "src/fmt.rs"
 
-[[bin]]
-name = "formatted_print"
-path = "src/formatted_print.rs"
+# [[bin]]
+# name = "formatted_print"
+# path = "src/formatted_print.rs"
 
-[[bin]]
-name = "print_debug"
-path = "src/print_debug.rs"
+# [[bin]]
+# name = "print_debug"
+# path = "src/print_debug.rs"
 
-[[bin]]
-name = "print_display"
-path = "src/print_display.rs"
+# [[bin]]
+# name = "print_display"
+# path = "src/print_display.rs"
 
-[[bin]]
-name = "testcase_list"
-path = "src/testcase_list.rs"
+# [[bin]]
+# name = "testcase_list"
+# path = "src/testcase_list.rs"

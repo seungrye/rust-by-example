@@ -1,4 +1,4 @@
-use ::function_name::named;
+// use ::function_name::named;
 
 fn tuples() {
     let pair = (0, -2);
@@ -78,8 +78,8 @@ fn pointers_n_ref() {
         }
     }
 }
-#[named]
-fn structs() {
+
+fn structs_() {
 
     struct Foo {
         x: (u32, u32),
@@ -99,5 +99,5 @@ pub fn main() {
     tuples();
     enums();
     pointers_n_ref();
-    structs();
+    structs_();
 }
