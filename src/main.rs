@@ -9,6 +9,7 @@ mod formatted_print;
 mod functions;
 mod print_debug;
 mod print_display;
+mod scoping_rules;
 mod structs;
 mod testcase_list;
 mod tuples;
@@ -59,4 +60,8 @@ fn main() {
     destructuring::main();
     flow_control::main();
     functions::main();
+    scoping_rules::lifetimes::main();
+    scoping_rules::lifetimes::explicit_annotation::main();
+    scoping_rules::lifetimes::functions::main();
+    scoping_rules::lifetimes::methods::main();
 }
