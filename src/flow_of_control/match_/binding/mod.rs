@@ -1,3 +1,4 @@
+#[allow(clippy::needless_return)]
 fn age() -> u32 {
     return 15;
 }
@@ -19,6 +20,7 @@ pub fn main() {
     }
 }
 
+#[allow(clippy::needless_return)]
 fn some_number() -> Option<u32> {
     return Some(42);
 }

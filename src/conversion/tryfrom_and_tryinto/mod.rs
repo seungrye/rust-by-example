@@ -17,6 +17,7 @@ struct EventNumber(i32);
 impl TryFrom<i32> for EventNumber {
     type Error = ();
 
+    #[allow(clippy::clippy::needless_return)]
     fn try_from(value: i32) -> Result<Self, Self::Error> {
         if value %2 == 0 {
             return Ok(EventNumber(value));

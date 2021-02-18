@@ -1,4 +1,4 @@
-use ::function_name::named;
+// use ::function_name::named;
 
 fn tuples() {
     let pair = (0, -2);
@@ -46,30 +46,35 @@ fn pointers_n_ref() {
     // Assign a reference of type 'i32'. The '&' signifies there is a reference being assigned.
     let reference = &4;
 
+    #[allow(clippy::match_single_binding)]
     match reference {
         // 만약 reference 변수를 '&val' 에 패턴매칭을 하면, &i32 과 &val 로 비교될 수 있다.
         // 이 경우, 매칭되는 '&' 는 빠지고, i32 가 val 에 할당된다.
-        &val => println!("Got a value via destructuring: {:?}", val),
+        ref val => println!("Got a value via destructuring: {:?}", val),
     }
 
     // To avoid the '&', you dereference before matching
+    #[allow(clippy::match_single_binding)]
     match *reference {
         val => println!("Got a  value via destructuring: {:?}", val),
     }
 
     let _not_a_reference = 3;
 
+    #[allow(clippy::toplevel_ref_arg)]
     let ref _is_a_reference = 3;  // 참조를 위해 'ref' 라는 키워드를 사용할수도 있음. (우측값에 '&' 를 붙이지 않아도 됨)
 
     // 다음의 값들은 'ref' 및 'ret mut' 로 받을 수 있습니다.
     let value = 5;
     let mut mut_value = 6;
 
+    #[allow(clippy::match_single_binding)]
     match value {
         // &r => println!("Got a reference to a value: {:?}", r),  // 이걸로는 받을 수 없음
         ref r => println!("Got a reference to a value : {:?}", r),
     }
 
+    #[allow(clippy::match_single_binding)]
     match mut_value {
         // &mut mr => println!("Got a reference to a value : {:?}", mr),  // 이걸로는 받을 수 없음
         ref mut mr => {
@@ -78,8 +83,8 @@ fn pointers_n_ref() {
         }
     }
 }
-#[named]
-fn structs() {
+
+fn structs_() {
 
     struct Foo {
         x: (u32, u32),
@@ -95,9 +100,33 @@ fn structs() {
         Foo { y, ..} => println!("y = {}", y),
     }
 }
+fn destructure_structures() {
+    struct Foo {
+        x: (u32, u32),
+        y: u32,
+    };
+
+    let foo_ = Foo { x: (1, 2), y: 3 };
+    let Foo { x: (a, b), y } = foo_;
+
+    println!("a = {}, b = {}, y = {}", a, b, y);
+
+    // 구조체를 destructuring 하거나 변수의 이름을 변경할 수 있습니다.
+    // 순서는 중요하지 않습니다.
+    let Foo { y: i, x: j } = foo_;
+    println!("i = {:?}, j = {:?}", i, j);
+
+    // 변수를 무시하는것도 가능합니다.
+    let Foo { y, .. } = foo_;
+    println!("y = {}", y);
+
+    // 필드에 대한 취급이 빠져있다면, 에러가 발생합니다.
+    // let Foo { y } = foo;
+}
 pub fn main() {
     tuples();
     enums();
     pointers_n_ref();
-    structs();
+    structs_();
+    destructure_structures();
 }

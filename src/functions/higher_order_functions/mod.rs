@@ -24,6 +24,7 @@ pub fn main() {
     println!("functional style: {}", sum_of_squared_odd_numbers);
 }
 
+#[allow(clippy::needless_return)]
 fn is_odd(n: i32) -> bool {
     return n % 2 == 1;
 }

@@ -1,6 +1,7 @@
 pub fn main() {
     let n = 5;
 
+    #[allow(clippy::comparison_chain)]
     if n < 0 {
         print!("{} is negative", n);
     } else if n > 0 {
