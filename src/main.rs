@@ -29,4 +29,5 @@ fn main() {
     functions::methods::main();
     functions::closures::main();
     functions::higher_order_functions::main();
+    functions::diverging_functions::main();
 }

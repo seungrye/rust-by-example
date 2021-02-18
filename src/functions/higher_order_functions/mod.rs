@@ -18,7 +18,7 @@ pub fn main() {
     println!("imperative style : {}", acc);
 
     let sum_of_squared_odd_numbers = (0..).map(|n| n*n) // all natural numbers squared
-        .take_while(|&n_suaqred| n_suaqred< upper) // below upper limit
+        .take_while(|&n_suaqred| n_suaqred < upper) // below upper limit
         .filter(|&n_squared| is_odd(n_squared)) // take odder
         .fold(0, |acc, n_squared| acc + n_squared); // sum
     println!("functional style: {}", sum_of_squared_odd_numbers);
