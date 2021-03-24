@@ -10,6 +10,7 @@ pub fn main() {
     match pair {
         (x, y) if x == y => println!("These are twins"),  // `if confition` part is a guard
         (x, y) if x + y == 0 => println!("Antimatter, boooooooooooooooom!!"),
+        //               ^ 요 'if 조건문' 이 guard 부분이다.
         (x, _) if x % 2 == 1 => println!("The first one is odd"),
         _ => println!("No Correlation..."),
     }

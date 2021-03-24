@@ -3,13 +3,13 @@
 fn for_and_range() {
     for n in 1..101 { // from 1 to 100 (exclude 101). You can write `for n in 1..=100 {` as alternatives
         if n % 15 == 0 {
-            print!("., ");
+            println!("fizzbuzz");
         } else if n % 3 == 0 {
-            print!(", ");
+            println!("fizz");
         } else if n % 5 == 0 {
-            print!(". ");
+            println!("buzz");
         } else {
-            print!("{} ", n);
+            println!("{}", n);
         }
     }
     println!();

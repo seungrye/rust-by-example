@@ -91,9 +91,9 @@ fn structs_() {
         y: u32,
     }
 
-    let foo = Foo { x:(1, 2), y:3};
+    let _foo = Foo { x:(1, 2), y:3};
 
-    match foo {
+    match _foo {
         Foo { x: (1, b), y} => println!("First of x is 1, b = {}, y = {}", b, y),
         Foo { x: i, y: 2} => println!("y is 2 and i => {:?}", i),
         // some variable can ignored (무시되어야 할 변수들은, .. 으로 취급되며, 뒤에 위치해야 함)

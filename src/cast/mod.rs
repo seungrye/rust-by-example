@@ -61,6 +61,8 @@ fn literals() {
         println!("size of 'f' in bytes: {}", std::mem::size_of_val(&f));
     }
 }
+
+#[allow(clippy::clippy::unnecessary_cast)]
 fn casting() {
     let decimal = 65.4321_f32;
 
